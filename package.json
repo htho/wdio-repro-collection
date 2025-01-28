@@ -9,6 +9,7 @@
   },
   "scripts": {
     "test:delayedIframe": "wdio wdio.conf.ts --spec delayedIframe",
-    "test:reloadCounter": "wdio wdio.conf.ts --spec reloadCounter"
+    "test:reloadCounter": "wdio wdio.conf.ts --spec reloadCounter",
+    "test:alert": "wdio wdio.conf.ts --spec alert"
   }
 }
