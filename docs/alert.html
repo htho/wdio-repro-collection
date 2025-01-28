@@ -6,6 +6,7 @@
     <title>Alert</title>
 </head>
 <body>
-    <button onclick="alert('foo')">Show Alert</button>
+    <button id="alert" onclick="alert('foo')">Show Alert</button>
+    <button id="delayedAlert" onclick="setTimeout(() => alert('foo'), 1000)">Show Delayed Alert</button>
 </body>
 </html>
