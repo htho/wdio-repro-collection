@@ -11,25 +11,35 @@ describe('alert', () => {
     });
     it("can be tested", async () => {
         await $("#alert").click();
-        // await browser.isAlertOpen(); // chrome only
-        expect(browser.getAlertText()).resolves.toBe("foo");
+        await expect(browser.getAlertText()).resolves.toBe("my alert");
     });
-    it("can be paused and tested", async () => {
+    it("fails with wrong value", async () => {
+        await $("#alert").click();
+        await expect(() =>
+            expect(browser.getAlertText()).resolves.toBe("bar")
+        ).rejects.toThrowError(/my alert/g);
+    });
+    it("should be pausable and then tested (but it isn't)", async () => {
         await $("#alert").click();
         await browser.pause(2_000);
-        await expect(browser.getAlertText()).resolves.toBe("foo");
+        await expect(browser.getAlertText()).resolves.toBe("my alert");
     });
 });
 describe('delayedAlert', () => {
     it("can be tested", async () => {
         await $("#delayedAlert").click();
-        // await browser.isAlertOpen(); // chrome only
-        expect(browser.getAlertText()).resolves.toBe("foo");
+        await expect(browser.getAlertText()).resolves.toBe("my alert");
     });
-    it("can be paused and tested", async () => {
+    it("fails with wrong value", async () => {
+        await $("#delayedAlert").click();
+        await expect(() =>
+            expect(browser.getAlertText()).resolves.toBe("bar")
+        ).rejects.toThrowError(/my alert/g);
+    });
+    it("should be pausable and tested (but it isn't)", async () => {
         await $("#delayedAlert").click();
         await browser.pause(2_000);
-        await expect(browser.getAlertText()).resolves.toBe("foo");
+        await expect(browser.getAlertText()).resolves.toBe("my alert");
     });
 });
 
