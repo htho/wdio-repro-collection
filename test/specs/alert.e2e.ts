@@ -6,7 +6,7 @@ beforeEach(async () => {
 });
 
 describe('alert', () => {
-    it.only("can be debugged", async () => {
+    it.skip("can be debugged", async () => {
         await browser.debug();
     });
     it("can be tested", async () => {
