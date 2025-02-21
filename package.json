@@ -11,6 +11,7 @@
     "test:delayedIframe": "wdio wdio.conf.ts --spec delayedIframe",
     "test:reloadCounter": "wdio wdio.conf.ts --spec reloadCounter",
     "test:alert": "wdio wdio.conf.ts --spec alert",
-    "test:iframeNavigation": "wdio wdio.conf.ts --spec iframeNavigation"
+    "test:iframeNavigation": "wdio wdio.conf.ts --spec iframeNavigation",
+  "test:dialogAndIframes": "wdio wdio.conf.ts --spec dialogAndIframes"
   }
 }
