@@ -11,7 +11,8 @@
     <script>
         if(document.location.search !== "?noLog") {
             // accessing contentWindow breaks it
-            console.log(/** @type {HTMLIFrameElement} */ (myIframe).contentWindow);
+            console.log(/** @type {HTMLIFrameElement} */ (myIframe).contentWindow.document.location.href);
+            // logs "about:blank"
         } 
     </script>
 </body>

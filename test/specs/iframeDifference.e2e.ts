@@ -2,7 +2,7 @@
 import { expect, browser } from '@wdio/globals'
 
 describe(`iframeDifference`, () => {
-    it.only("debug-time", async () => {
+    it.skip("debug-time", async () => {
         await browser.url(`https://htho.github.io/wdio-repro-collection/iframeDifference.html`);
 
         await browser.debug();

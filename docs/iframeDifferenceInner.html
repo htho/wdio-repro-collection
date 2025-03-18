@@ -8,9 +8,11 @@
         class MyCustomElement extends HTMLElement {
             constructor() {
                 super();
+                console.log("new MyCustomElement()");
             }
-
+            
             connectedCallback() {
+                console.log("MyCustomElement.prototype.connectedCallback()");
                 this.insertAdjacentHTML("afterbegin", "<p>hi</p>")
             }
         }
