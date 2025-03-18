@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Difference Inner</title>
+    <script>
+        class MyCustomElement extends HTMLElement {
+            constructor() {
+                super();
+            }
+
+            connectedCallback() {
+                this.insertAdjacentHTML("afterbegin", "<p>hi</p>")
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Iframe Difference Inner</h1>
+    <my-element></my-element>
+    <script>
+        // define is called after the element is in the DOM.
+        // This is the same as if the element was defined in a module.
+        window.customElements.define("my-element", MyCustomElement)
+    </script>
+</body>
+</html>

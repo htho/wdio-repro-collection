@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Difference</title>
+</head>
+<body>
+    <h1>Iframe Difference</h1>
+    <iframe id="myIframe" src="iframeDifferenceInner.html"></iframe>
+    <script>
+        if(document.location.search !== "?noLog") {
+            // accessing contentWindow breaks it
+            console.log(/** @type {HTMLIFrameElement} */ (myIframe).contentWindow);
+        } 
+    </script>
+</body>
+</html>

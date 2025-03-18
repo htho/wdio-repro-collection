@@ -8,10 +8,11 @@
     "@wdio/spec-reporter": "^9.5.0"
   },
   "scripts": {
-    "test:delayedIframe": "wdio wdio.conf.ts --spec delayedIframe",
-    "test:reloadCounter": "wdio wdio.conf.ts --spec reloadCounter",
     "test:alert": "wdio wdio.conf.ts --spec alert",
+    "test:delayedIframe": "wdio wdio.conf.ts --spec delayedIframe",
+    "test:dialogAndIframes": "wdio wdio.conf.ts --spec dialogAndIframes",
+    "test:iframeDifference": "wdio wdio.conf.ts --spec iframeDifference",
     "test:iframeNavigation": "wdio wdio.conf.ts --spec iframeNavigation",
-  "test:dialogAndIframes": "wdio wdio.conf.ts --spec dialogAndIframes"
+    "test:reloadCounter": "wdio wdio.conf.ts --spec reloadCounter"
   }
 }
