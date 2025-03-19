@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Elements</title>
+    <script>
+        if(document.location.search !== "?noCustom") {
+            // to break, the custom element must be used AND defined
+            class MyElement extends HTMLElement {}
+            window.customElements.define("my-element", MyElement);
+        }
+        
+        // a defined element which stays unused is ok
+        class MyUnusedElement extends HTMLElement {}
+        window.customElements.define("my-unused-element", MyElement);
+    </script>
+</head>
+<body>
+    <h1>Select Multiple Elements in Custom Element</h1>
+    <h2>2 Paragraphs</h2>
+    <div>
+        <p>hi</p>
+        <p>hi</p>
+    </div>
+    
+    <!-- to break, the custom element must be used AND defined -->
+    <my-element></my-element>
+</body>
+</html>
