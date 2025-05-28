@@ -38,13 +38,19 @@ describe('select an element in the shadow dom', () => {
 });
 
 describe('switchFrame to an iframe in the shadow dom', () => {
-    it(`works (fails in 9.14.0)`, async () => {
+    it(`works using a selector (fails in 9.14.0)`, async () => {
         const $iframe = $("#wrapper").shadow$("iframe");
         await expect($iframe).toExist();
 
         // FAILS in chrome: WebDriver Bidi command "script.callFunction" failed with error: invalid argument - Invalid input in "arguments"/0.
         // FAILS in firefox: WebDriver Bidi command "script.callFunction" failed with error: invalid argument - Expected "type" to be a string, got [object Undefined] undefined
         await browser.switchFrame($iframe);
+        
+        await expect($(`h1`)).toHaveText("Iframe Target");
+    });
+    it(`works using the url (fails in 9.14.0)`, async () => {
+        // FAILS: Frame with url or context id "https://htho.github.io/wdio-repro-collection/iframeTarget.html" not found, available frames to switch to: -
+        await browser.switchFrame("https://htho.github.io/wdio-repro-collection/iframeTarget.html");
         
         await expect($(`h1`)).toHaveText("Iframe Target");
     });
