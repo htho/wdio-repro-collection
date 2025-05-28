@@ -6,12 +6,22 @@ beforeEach(async () => {
 });
 
 describe('select an element in the shadow dom', () => {
-    it(`works using direct piercing as introduced in v9 (fails in 9.14.0)`, async () => {
+    it(`works using direct piercing as introduced in v9 with "child" (fails in 9.14.0)`, async () => {
         const $el = $("#headlineInShadow");
         await expect($el).toExist(); // FAILS
         await expect($el).toHaveText("Headline in Shadow Root");
     });
-    it(`works using classic piercing with >>> (fails in 9.14.0)`, async () => {
+    it(`works using direct piercing as introduced in v9 with "parent child" (fails in 9.14.0)`, async () => {
+        const $el = $("#wrapper #headlineInShadow");
+        await expect($el).toExist(); // FAILS
+        await expect($el).toHaveText("Headline in Shadow Root");
+    });
+    it(`works using classic piercing with ">>>child" (works in 9.14.0)`, async () => {
+        const $el = $(">>>#headlineInShadow");
+        await expect($el).toExist();
+        await expect($el).toHaveText("Headline in Shadow Root");
+    });
+    it(`works using classic piercing with "parent>>>child" (fails in 9.14.0)`, async () => {
         const $el = $("#wrapper>>>#headlineInShadow");
         
         // FAILS in chrome: WebDriverError: invalid selector: An invalid or illegal selector was specified  (Session info: chrome=135.0.7049.115) when running "element" with method "POST" and args "{"using":"css selector","value":"#wrapper>>>#headlineInShadow"}"
@@ -20,7 +30,7 @@ describe('select an element in the shadow dom', () => {
 
         await expect($el).toHaveText("Headline in Shadow Root");
     });
-    it(`works using .shadow$() (works in 9.14.0)`, async () => {
+    it(`works using $("parent").shadow$("child") (works in 9.14.0)`, async () => {
         const $el = $("#wrapper").shadow$("#headlineInShadow");
         await expect($el).toExist();
         await expect($el).toHaveText("Headline in Shadow Root");
