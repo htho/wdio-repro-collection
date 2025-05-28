@@ -12,6 +12,7 @@
     "test:delayedIframe": "wdio wdio.conf.ts --spec delayedIframe",
     "test:dialogAndIframes": "wdio wdio.conf.ts --spec dialogAndIframes",
     "test:iframeDifference": "wdio wdio.conf.ts --spec iframeDifference",
+    "test:iframeInShadow": "wdio wdio.conf.ts --spec iframeInShadow",
     "test:iframeNavigation": "wdio wdio.conf.ts --spec iframeNavigation",
     "test:multipleElements": "wdio wdio.conf.ts --spec multipleElements",
     "test:reloadCounter": "wdio wdio.conf.ts --spec reloadCounter"
