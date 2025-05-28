@@ -7,8 +7,10 @@
 </head>
 <body>
     <h1>IFrame in Shadow DOM</h1>
-    <template shadowrootmode="open">
-        <iframe src="iframeTarget.html"></iframe>
-    </template>
+    <div id="wrapper">
+        <template shadowrootmode="open">
+            <iframe src="iframeTarget.html"></iframe>
+        </template>
+    </div>
 </body>
 </html>
