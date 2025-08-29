@@ -9,6 +9,7 @@
   },
   "scripts": {
     "test:alert": "wdio wdio.conf.ts --spec alert",
+    "test:alertInIframe": "wdio wdio.conf.ts --spec alertInIframe",
     "test:delayedIframe": "wdio wdio.conf.ts --spec delayedIframe",
     "test:dialogAndIframes": "wdio wdio.conf.ts --spec dialogAndIframes",
     "test:iframeDifference": "wdio wdio.conf.ts --spec iframeDifference",

@@ -17,7 +17,7 @@ describe('alert', () => {
         await $("#alert").click();
         await expect(() =>
             expect(browser.getAlertText()).resolves.toBe("bar")
-        ).rejects.toThrowError(/my alert/g);
+        ).rejects.toThrow(/my alert/g);
     });
     it("should be pausable and then tested (but it isn't)", async () => {
         await $("#alert").click();
@@ -34,7 +34,7 @@ describe('delayedAlert', () => {
         await $("#delayedAlert").click();
         await expect(() =>
             expect(browser.getAlertText()).resolves.toBe("bar")
-        ).rejects.toThrowError(/my alert/g);
+        ).rejects.toThrow(/my alert/g);
     });
     it("should be pausable and tested (but it isn't)", async () => {
         await $("#delayedAlert").click();
