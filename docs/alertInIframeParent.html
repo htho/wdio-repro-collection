@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Difference</title>
+</head>
+<body>
+    <h1>Alert Iframe</h1>
+    <h2>Parent</h2>
+    <button id="alert" onclick="alert('my alert (parent)')">Show Alert</button>
+    <button id="delayedAlert" onclick="setTimeout(() => alert('my delayed alert (parent)'), 1000)">Show Delayed Alert</button>
+    <h2>Iframe</h2>
+    <iframe id="myIframe" src="alertInIframe.html"></iframe>
+</body>
+</html>
